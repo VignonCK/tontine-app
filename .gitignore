@@ -39,3 +39,6 @@ application-local.properties
 ### Systèmes d'exploitation ###
 Thumbs.db
 .DS_Store
+
+### Sauvegardes de la base ###
+docs/backups/
