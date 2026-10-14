@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- Page d'accueil temporaire : vitrine de la charte, remplacée par le module 1 -->
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/gabarit :: head('Accueil')}"></head>
+<body>
+
+<header th:replace="~{fragments/gabarit :: entete}"></header>
+
+<main>
+    <div class="conteneur">
+        <h1>Bienvenue sur Tontine App</h1>
+        <p>Page provisoire : elle présente la charte graphique en attendant le module 1.</p>
+
+        <section class="carte">
+            <h2>Couleurs</h2>
+            <ul class="nuancier">
+                <li class="nuance nuance-primaire">Primaire – vert tontine</li>
+                <li class="nuance nuance-accent">Accent – or bronze</li>
+                <li class="nuance nuance-texte">Texte – gris neutre</li>
+                <li class="nuance nuance-succes">Succès – vert</li>
+                <li class="nuance nuance-alerte">Alerte – corail</li>
+            </ul>
+        </section>
+
+        <section class="carte">
+            <h2>Badges de statut</h2>
+            <p>
+                <span class="badge badge-succes">à jour</span>
+                <span class="badge badge-alerte">en retard</span>
+            </p>
+        </section>
+    </div>
+</main>
+
+<footer th:replace="~{fragments/gabarit :: pied}"></footer>
+
+</body>
+</html>
