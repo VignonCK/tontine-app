@@ -189,6 +189,27 @@ main {
     content: "⏳" / "";
 }
 
+/* --- Pages d'erreur --- */
+.page-erreur {
+    max-width: 640px;
+}
+
+/* Message de règle métier : icône + bordure, pas seulement la couleur */
+.message-erreur {
+    padding: calc(var(--espace) * 0.75) var(--espace);
+    border-left: 4px solid var(--couleur-alerte);
+    border-radius: var(--rayon);
+    background: #FBEAE6;
+    color: var(--couleur-texte);
+}
+
+.message-erreur::before {
+    content: "! ";
+    content: "! " / "";
+    color: #A3402C;
+    font-weight: 700;
+}
+
 /* --- Nuancier (page temporaire) --- */
 .nuancier {
     display: grid;

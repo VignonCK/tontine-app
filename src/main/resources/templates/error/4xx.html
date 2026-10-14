@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/gabarit :: head('Demande impossible')}"></head>
+<body>
+
+<header th:replace="~{fragments/gabarit :: entete}"></header>
+
+<main>
+    <div class="conteneur page-erreur">
+        <h1>Demande impossible</h1>
+        <!-- Utilisée par Spring Boot pour les erreurs 4xx sans page dédiée (400, 405...) -->
+        <p>Votre demande n'a pas pu être traitée. Vérifiez l'adresse ou les informations saisies, puis réessayez.</p>
+        <p><a th:href="@{/}">Retour à l'accueil</a></p>
+    </div>
+</main>
+
+<footer th:replace="~{fragments/gabarit :: pied}"></footer>
+
+</body>
+</html>
