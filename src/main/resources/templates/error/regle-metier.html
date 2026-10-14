@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/gabarit :: head('Action impossible')}"></head>
+<body>
+
+<header th:replace="~{fragments/gabarit :: entete}"></header>
+
+<main>
+    <div class="conteneur page-erreur">
+        <h1>Action impossible</h1>
+        <!-- Message en français fourni par RegleMetierException (th:text échappe le HTML) -->
+        <p class="message-erreur" role="alert" th:text="${message}">Message de la règle de gestion.</p>
+        <p><a th:href="@{/}">Retour à l'accueil</a></p>
+    </div>
+</main>
+
+<footer th:replace="~{fragments/gabarit :: pied}"></footer>
+
+</body>
+</html>
