@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- Fragments communs à toutes les pages (inclus avec th:replace) -->
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<!-- En-tête HTML ; usage : th:replace="~{fragments/gabarit :: head('Titre de la page')}" -->
+<head th:fragment="head(titre)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title th:text="${titre} + ' – Tontine App'">Tontine App</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<!-- Bandeau du haut : nom de l'application et futur menu -->
+<header class="entete" th:fragment="entete">
+    <div class="conteneur entete-contenu">
+        <a class="entete-nom" th:href="@{/}">Tontine App</a>
+        <!-- Menu de navigation : sera rempli par les modules suivants -->
+        <nav class="entete-menu" aria-label="Menu principal"></nav>
+    </div>
+</header>
+
+<!-- Pied de page -->
+<footer class="pied" th:fragment="pied">
+    <div class="conteneur">
+        <p>Tontine App – gestion de tontine</p>
+    </div>
+</footer>
+
+</body>
+</html>
