@@ -1,0 +1,31 @@
+# =====================================================================
+# Base de données MySQL du projet Tontine App (développement local)
+#
+# Ce fichier décrit la base dont l'application a besoin. Docker s'en
+# sert pour télécharger, configurer et démarrer MySQL automatiquement,
+# à l'identique sur la machine de chaque membre de l'équipe.
+#
+# Démarrer la base : docker compose up -d
+# Arrêter la base  : docker compose down
+#
+# Les mots de passe sont lus dans le fichier .env (non versionné).
+# Pour le créer : copier .env.example en .env, puis le remplir.
+# =====================================================================
+
+services:
+  mysql:
+    image: mysql:8.4                 # Version de MySQL (8.4 = version LTS)
+    container_name: tontine-mysql    # Nom du conteneur dans Docker Desktop
+    restart: unless-stopped          # Redémarre avec Docker, sauf arrêt manuel
+    environment:
+      MYSQL_DATABASE: tontine_db               # Base créée au premier lancement
+      MYSQL_USER: ${DB_USER}                   # Utilisateur de l'application
+      MYSQL_PASSWORD: ${DB_PASSWORD}           # Son mot de passe (lu dans .env)
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD} # Mot de passe administrateur (lu dans .env)
+    ports:
+      - "127.0.0.1:3306:3306"        # Accessible uniquement depuis ce PC, port 3306
+    volumes:
+      - tontine_data:/var/lib/mysql  # Données conservées même si le conteneur est supprimé
+
+volumes:
+  tontine_data:                      # Espace de stockage persistant des données
